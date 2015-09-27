@@ -14,6 +14,11 @@ class ConnectionsController < ApplicationController
   	@connection.destroy 
   	redirect_to dashboard_path, notice: "Connection deleted"
   end
+  
+  def omniauth_failure
+  	redirect_to dashboard_path, notice:"something went wrong"
+  end
+
 
   private 
 
