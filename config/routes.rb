@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
 
+  get 'auth/:provider/callback', to: 'connections#create'
+  resources :connections, only: [:destroy]
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
